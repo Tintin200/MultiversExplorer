@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 interface Character {
@@ -11,6 +12,7 @@ interface Character {
 }
 
 const HomePage: React.FC = () => {
+  const navigate = useNavigate();
   const [allCharacters, setAllCharacters] = useState<Character[]>([]);
   const [characters, setCharacters] = useState<Character[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -47,7 +49,7 @@ const HomePage: React.FC = () => {
   }, [allCharacters, currentPage, charactersPerPage]);
 
   const handleCardClick = (characterId: number) => {
-    console.log(`Cliquer sur le personnage ${characterId}`);
+    navigate(`/character/${characterId}`);
   };
 
   const handlePageChange = (page: number) => {

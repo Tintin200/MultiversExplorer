@@ -126,12 +126,6 @@ code {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--shadow);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: rgba(0, 0, 0, 0.15) 0 15px 25px -5px, rgba(0, 0, 0, 0.1) 0 10px 10px -5px;
 }
 
 .card-image {
@@ -155,4 +149,10 @@ code {
   font-size: 14px;
   color: var(--text);
   margin: 0;
+}
+
+/* Disable hover effects on Bootstrap cards */
+.card:hover {
+  transform: none !important;
+  box-shadow: var(--shadow) !important;
 }
